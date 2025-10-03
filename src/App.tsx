@@ -9,7 +9,7 @@ const App: React.FC = () => {
     <ToastProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<JobsBoard />} />
+          <Route path="/jobs" element={<JobsBoard />} />
           <Route path="/jobs/:id" element={<JobDetail />} />
         </Routes>
       </Router>

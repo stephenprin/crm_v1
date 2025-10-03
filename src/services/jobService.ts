@@ -3,7 +3,13 @@ import api from "./api";
 export interface JobPayload {
   title: string;
   description: string;
-  customer_id: number;
+  customer_id?: number;
+  customer: {
+    id?: number;
+    name: string;
+    email: string;
+    phone?: string;
+  };
 }
 
 export const getJobs = async () => {
@@ -17,7 +23,7 @@ export const getJobById = async (id: number) => {
 };
 
 export const createJob = async (payload: JobPayload) => {
-  const res = await api.post("/jobs", payload);
+    const res = await api.post("/jobs/create", payload);
   return res.data;
 };
 
